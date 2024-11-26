@@ -1,4 +1,4 @@
-const tasks = [
+export const tasks = [
 	{
 		id: 1,
 		title: 'Implementare la homepage',
@@ -68,7 +68,7 @@ const tasks = [
 		priority: 2,
 		estimatedTime: 90,
 		state: 'in_progress',
-	},
+	}
 ]
 
 console.log(tasks)
