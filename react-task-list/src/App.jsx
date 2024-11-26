@@ -8,6 +8,9 @@ function App() {
 
   return (
     <main>
+      <header className='header'>
+        <h1>Task Manager</h1>
+      </header>
       <section>
         <h3>Current Tasks ({remainingTasks.length})</h3>
           <ul>
