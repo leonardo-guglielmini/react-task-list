@@ -9,33 +9,35 @@ function App() {
   return (
     <main>
       <header className='header'>
-        <h1>Task Manager</h1>
+        <h2>Task Manager</h2>
       </header>
-      <section>
-        <h3>Current Tasks ({remainingTasks.length})</h3>
-          <ul>
-            {remainingTasks.map((task) =>
-            <li key={task.id}>
-              <h4>{task.title}</h4>
-              <div>{task.state}</div>
+      <div className='container'>
+        <section className='remainingTasks'>
+          <h3 className='currentTasks'>Current Tasks ({remainingTasks.length})</h3>
+            <ul>
+              {remainingTasks.map((task) =>
+              <li className="task" key={task.id}>
+                <h4 className='taskTitle'>{task.title}</h4>
+                <div className="taskState">{task.state}</div>
+                <p>Priority: {task.priority}</p>
+                <p>Est. Time: {task.estimatedTime}</p>
+              </li>)}
+            </ul>
+        </section>
+        <hr></hr>
+        <section className='completedTasks'>
+          <h3 className='currentTasks'>Current Tasks ({completedTasks.length})</h3>
+            <ul>
+              {completedTasks.map((task) =>
+              <li className="task" key={task.id}>
+              <h4 className='taskTitle'>{task.title}</h4>
+              <div className="taskState">{task.state}</div>
               <p>Priority: {task.priority}</p>
               <p>Est. Time: {task.estimatedTime}</p>
             </li>)}
-          </ul>
-      </section>
-
-      <section>
-        <h3>Current Tasks ({completedTasks.length})</h3>
-          <ul>
-            {completedTasks.map((task) =>
-            <li key={task.id}>
-              <h4>{task.title}</h4>
-              <div>{task.state}</div>
-              <p>Priority: {task.priority}</p>
-              <p>Est. Time: {task.estimatedTime}</p>
-            </li>)}
-          </ul>
-      </section>
+            </ul>
+        </section>
+      </div>
     </main>
   )
 }
